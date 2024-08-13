@@ -1,4 +1,4 @@
-package com.DataStructures.introducao.EX1;
+package com.DataStructures.a_Introducao.EX1;
 
 public class MyOBJ {
 

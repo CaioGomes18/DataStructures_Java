@@ -1,4 +1,4 @@
-package com.DataStructures.introducao.Ex3;
+package com.DataStructures.a_Introducao.Ex3;
 
 public class No<T> {
 

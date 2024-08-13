@@ -1,4 +1,4 @@
-package com.DataStructures.introducao.EX2.ConceitoNO;
+package com.DataStructures.a_Introducao.EX2.ConceitoNO;
 
 public class Main {
     public static void main(String[] args) {
