@@ -2,25 +2,25 @@ package com.DataStructures.c_Filas.EXE1;
 
 public class Fila {
 
-    private No refEntradaFila;
+    private No refentryFila1;
 
     public Fila() {
-        this.refEntradaFila = null;
+        this.refentryFila1 = null;
     }
 
-    public boolean isEmpty(){
-       return refEntradaFila == null? true : false;
+    public boolean vazio(){
+       return refentryFila1 == null? true : false;
     }
 
 
     public void enqueue(No novoNo){
-        novoNo.setRefNo(refEntradaFila);
-        refEntradaFila = novoNo;
+        novoNo.setRefNo(refentryFila1);
+        refentryFila1 = novoNo;
     }
 
     public No first(){
-        if(!this.isEmpty()){
-            No primeiroNO = refEntradaFila;
+        if(!this.vazio()){
+            No primeiroNO = refentryFila1;
 
             while(true){
                 if(primeiroNO.getRefNo() != null){
@@ -29,6 +29,7 @@ public class Fila {
                     break;
                 }
             }
+            return primeiroNO;
         }
         return null;
     }
@@ -36,9 +37,9 @@ public class Fila {
 
 
     public No dequeue(){
-        if(!this.isEmpty()){
-            No primeiroNO = refEntradaFila;
-            No noAux = refEntradaFila;
+        if(!this.vazio()){
+            No primeiroNO = refentryFila1;
+            No noAux = refentryFila1;
 
             while(true){
                 if(primeiroNO.getRefNo() != null){
@@ -55,25 +56,24 @@ public class Fila {
     }
 
     @Override
-    public String toString()
-    {
-        String stringReturn = "";
+    public String toString() {
+        String stringRetorno = "";
+        No noAuxiliar = refentryFila1;
 
-        No noAux = refEntradaFila;
-
-        if(refEntradaFila != null){
+        if(refentryFila1 != null){
             while(true){
-                stringReturn += "NO { objeto = " + noAux.getObject()+ "} ----->";
-                if(noAux.getRefNo() != null){
-                    noAux = noAux.getRefNo();
+                stringRetorno += "[No{objeto="+ noAuxiliar.getObject() +"}]--->";
+                if(noAuxiliar.getRefNo() != null){
+                    noAuxiliar = noAuxiliar.getRefNo();
                 }else{
-                    stringReturn = "null";
+                    stringRetorno += "null";
                     break;
                 }
             }
         }else{
-            stringReturn = "null";
+            stringRetorno = "null";
         }
-        return stringReturn;
+
+        return stringRetorno;
     }
 }
