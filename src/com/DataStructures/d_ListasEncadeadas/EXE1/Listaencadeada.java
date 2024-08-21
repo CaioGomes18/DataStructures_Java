@@ -62,11 +62,29 @@ public class Listaencadeada <T>{
     }
 
 
-    public void validaIndice(int index){
+    private void validaIndice(int index){
         if(index >= this.size()){
 
             int ultimoIndice = size() - 1;
             throw new IndexOutOfBoundsException("não existe conteúdo no indece " + index + "dessa lista, essa lista só vai até o tamanho" + ultimoIndice);
         }
+    }
+
+    public T get(int index){
+        return getNo(index).getDado();
+    }
+
+    public T remove(int index){
+        validaIndice(index);
+        No<T> noAlvo = this.getNo(index);
+        if(index == 0){
+            referenciaEntrada = noAlvo.getProxNo();
+            return noAlvo.getDado();
+        }
+
+        No<T> noAnterior = getNo(index -1);
+
+        noAnterior.setProxNo(noAlvo.getProxNo());
+        return noAlvo.getDado();
     }
 }
