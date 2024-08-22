@@ -87,4 +87,20 @@ public class Listaencadeada <T>{
         noAnterior.setProxNo(noAlvo.getProxNo());
         return noAlvo.getDado();
     }
+
+    @Override
+    public String toString() {
+
+        String strRetorno = "";
+
+        No<T> noAux = referenciaEntrada;
+
+        for(int i = 0; i< this.size(); i++){
+            strRetorno += "No{" + "conteúdo=" + noAux.getDado() + "}----> ";
+            noAux = noAux.getProxNo();
+        }
+
+        strRetorno += "null";
+        return strRetorno;
+    }
 }
