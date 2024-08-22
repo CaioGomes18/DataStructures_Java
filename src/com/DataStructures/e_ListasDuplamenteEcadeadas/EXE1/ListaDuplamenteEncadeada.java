@@ -4,10 +4,10 @@ public class ListaDuplamenteEncadeada<T> {
 
     private NoDuplo<T> primeiroNO;
     private NoDuplo<T> referenciaUltimoNO;
+
+
+
     private int tamanhoLista;
-
-
-
 
     public ListaDuplamenteEncadeada(){
         primeiroNO = null;
@@ -73,9 +73,6 @@ public class ListaDuplamenteEncadeada<T> {
     }
 
     public void remove(int index){
-
-
-
 
         if(index == 0){
             primeiroNO = primeiroNO.getNoprox();
