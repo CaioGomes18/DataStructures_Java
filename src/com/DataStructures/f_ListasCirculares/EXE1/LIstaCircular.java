@@ -86,4 +86,19 @@ public class LIstaCircular<T> {
 
      }
 
+    @Override
+    public String toString() {
+        String strRetorno = "";
+
+        No<T> noAux = this.cauda;
+
+        for(int i = 0; i < this.size(); i++){
+            strRetorno += "[NO{conteúdo = "+ noAux.getConteudo() + " }]----> ";
+            noAux = noAux.getNoRefProx();
+
+        }
+        strRetorno += this.size() != 0 ? "(Retorna ao inicio da lista)" : "[]";
+
+        return strRetorno;
+    }
 }
