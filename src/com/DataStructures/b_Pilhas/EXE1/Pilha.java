@@ -9,10 +9,13 @@ public class Pilha {
     public Pilha(){
         this.refNoEntradaPilha =  null;
     }
+
     public void push(No novoNo){
         No refAux = refNoEntradaPilha;
         refNoEntradaPilha = novoNo;
         refNoEntradaPilha.setReNo(refAux);
+        /*basicamente a mesma coisa só que para entender esse de baixo é melhor
+        novoNo.setReNo(refAux);*/
     }
 
     public No top(){
