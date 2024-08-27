@@ -1,0 +1,14 @@
+- função add list.add(7d) ou list.add(7.0)
+//isso vale para listas double, ela adiciona a o valor especificado dentro da lista
+
+- Função set
+// Ela altera o valor que está no index dentro do array list
+//Exemplo trocar o 5 pelo 6 na posição 3
+
+//list.set(list.indexOf(5d), 6.0) ou list.set(3, 6.0)
+
+- função contains
+// Ele verifica se o valor existe no arrayList
+
+função IndexOf()
+//Ela ve qual o indice do valor especificado
