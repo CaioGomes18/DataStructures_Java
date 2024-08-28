@@ -1,4 +1,4 @@
-package com.DataStructures.n_ex_Colections_java.List;
+package com.DataStructures.n_ex_Colections_java.List.Exercicios.EXE1;
 
 import java.util.*;
 
