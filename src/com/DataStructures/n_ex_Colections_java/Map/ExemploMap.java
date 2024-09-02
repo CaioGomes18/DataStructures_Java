@@ -98,7 +98,44 @@ public class ExemploMap {
 
         System.out.println("Exiba a média dos consumos desse dicionario de carros = "+ (soma/carrosPopulares.size()));
 
+        System.out.println("Remova os veiculos qual o consumo é 15,6k m/l");
 
+        Iterator<Double> iterator1 = carrosPopulares.values().iterator();
+
+        System.out.println(carrosPopulares);
+
+         while(iterator1.hasNext()){
+             if(iterator1.next().equals(15.6)){
+                 iterator1.remove();
+             }
+         }
+
+        System.out.println(carrosPopulares);
+
+        System.out.println("Eiba todos os carros na ordem que foram informados");
+
+
+        Map<String, Double> carrosPopulares1 = new LinkedHashMap<>(){{
+            put("gol", 14.4);
+            put("uno", 15.6);
+            put("mobi", 16.1);
+            put("hb20", 14.5);
+            put("kwid", 15.6);
+        }};
+
+        System.out.println(carrosPopulares1);
+
+        System.out.println("Exiba o dicionario ordenado pelo modelo");
+
+        Map<String, Double > treemap = new TreeMap<>(carrosPopulares1);
+
+        System.out.println(treemap);
+
+        System.out.println("Apague o dicionario de carros");
+
+        carrosPopulares.clear();
+
+        System.out.println("Confira se o dicionario está vazio : " + carrosPopulares.isEmpty());
 
     }
 }
