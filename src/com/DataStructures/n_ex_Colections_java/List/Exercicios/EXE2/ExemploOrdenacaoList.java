@@ -3,6 +3,7 @@ package com.DataStructures.n_ex_Colections_java.List.Exercicios.EXE2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /*Dadas as seguintes informações sobre meus gatos, crie uma lista
@@ -42,17 +43,17 @@ public class ExemploOrdenacaoList {
         System.out.println(meusGatos);
 
 
-        meusGatos.sort(new ComparatorIdade());
+        meusGatos.sort(Comparator.comparing((Gato gato) -> gato.getIdade()));
         System.out.println(meusGatos);
 
         System.out.println("--\tOrdem cor\t---");
 
-        Collections.sort(meusGatos, new ComparatorCor());
+        meusGatos.sort(Comparator.comparing((Gato gato) -> gato.getColor()));
         System.out.println(meusGatos);
 
         System.out.println("--\tOrdem Nome/Cor/Idade\t---");
 
-        Collections.sort(meusGatos, new ComparatorNomeCorIdade());
+        meusGatos.sort(new ComparatorNomeCorIdade());
         System.out.println(meusGatos);
 
 
