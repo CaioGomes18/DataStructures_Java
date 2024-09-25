@@ -3,6 +3,7 @@ package com.DataStructures.StreamAPI.stream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ExercicioStreamAPI {
@@ -55,6 +56,61 @@ public class ExercicioStreamAPI {
         System.out.println(collectList);
 
         //----------------------------------------------------------------------------------
+
+
+        System.out.println("Pegue os números pares e maiores que 2 e coloque em uma lista:");
+
+
+        //O filter pede um predicate
+        /*List<Integer> lista2 = numeros.stream()
+                .map(Integer::parseInt)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer i) {
+                        if(i % 2 ==0 && i> 2)return true;
+                        return false;
+                    }
+                })
+                .collect(Collectors.toList());*/
+
+        //podemos simplificar
+
+        List<Integer> lista2 = numeros.stream()
+                .map(Integer::parseInt)
+                .filter(i -> i %2 == 0 && i > 2)
+                .collect(Collectors.toList());
+
+        System.out.println(lista2);
+
+
+
+        //----------------------------------------------------------------------------------
+
+        System.out.println("Mostre a média dos números: ");
+
+        //No caso uso o MapToINt pois posso fazer manipulação de cada numero podemos assim dizer
+        numeros.stream().mapToInt(Integer :: parseInt).average().ifPresent(System.out::println);
+
+
+
+
+
+        //----------------------------------------------------------------------------------
+
+        System.out.println("Remova os valores ímpares: ");
+
+        /*collectList.removeIf(new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer integer) {
+                if(integer % 2 != 0)return true;
+                return false;
+            }
+        });*/
+
+        collectList.removeIf( i -> (i % 2 !=0));
+
+        System.out.println(collectList);
+
     }
 
 

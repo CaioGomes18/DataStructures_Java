@@ -9,9 +9,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("--\tOrdem aleatória\t--");
         Map<Integer, Contato> agenda = new HashMap<>() {{
-            put(1, new Contato("Simba", 5555));
-            put(4, new Contato("Cami", 1111));
-            put(3, new Contato("Jon", 2222));
+            put(1, new Contato("Joana", 45500567));
+            put(3, new Contato("Marcos", 67899067));
+            put(5, new Contato("lucas", 12458907));
         }};
         System.out.println(agenda);
         for (Map.Entry<Integer, Contato> entry: agenda.entrySet()) {
@@ -93,17 +93,20 @@ public class Main {
 
         //Forma com function----------------------
 
-        /*Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(Comparator.comparing(new Function<Map.Entry<Integer, Contato>, String>() {
+        Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(Comparator.comparing(new Function<Map.Entry<Integer, Contato>, String>() {
             @Override
             public String apply(Map.Entry<Integer, Contato> cont) {
                 return cont.getValue().getNome();
             }
-        }));*/
+        }));
 
         //Forma com lambda-------------------
 
-        Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(Comparator.comparing(cont->cont.getValue().getNome()));
+        /*Set<Map.Entry<Integer, Contato>> set1 = new TreeSet<>(Comparator.comparing(cont->cont.getValue().getNome()));
 
+        set1.addAll(agenda.entrySet());
+
+         */
         set1.addAll(agenda.entrySet());
         for (Map.Entry<Integer, Contato> entry: set1) {
             System.out.println(entry.getKey() + " - " + entry.getValue().getNome());

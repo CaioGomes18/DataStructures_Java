@@ -16,6 +16,8 @@ public class ComparatorNomeCorIdade implements Comparator<Gato> {
         if(cor != 0){
             return cor;
         }
+
+
         return Integer.compare(g1.getIdade() , g2.getIdade());
     }
 }
